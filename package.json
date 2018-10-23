@@ -25,6 +25,7 @@
   "devDependencies": {
     "@gauseen/nuxt-proxy": "^1.0.1",
     "@nuxtjs/proxy": "^1.2.4",
+    "backpack-core": "^0.7.0",
     "css-loader": "^1.0.0",
     "node-sass": "^4.9.3",
     "nodemon": "^1.11.0",
