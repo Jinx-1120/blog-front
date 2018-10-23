@@ -2,7 +2,7 @@ import axios from 'axios'
 import * as config from './config.js'
 
 const ajax = axios.create({
-  baseURL: 'http://localhost:3000/client'
+  baseURL: '/client'
 })
 
 // 拦截器
