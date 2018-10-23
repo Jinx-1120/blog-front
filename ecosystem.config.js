@@ -9,8 +9,8 @@ module.exports = {
       NODE_ENV: 'production'
     },
     log_date_format: 'YYYY-MM-DD HH:mm Z',
-    out_file: '/var/logs/blogfront/pm2-out.log',
-    error_file: '/var/logs/blogfront/pm2-error.log'
+    out_file: '/var/log/blogfront/pm2-out.log',
+    error_file: '/var/log/blogfront/pm2-error.log'
   }],
   deploy: {
     production: {
