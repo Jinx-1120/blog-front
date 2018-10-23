@@ -18,7 +18,7 @@ module.exports = {
       host: 'blog',
       ref: 'origin/master',
       repo: 'git@github.com:Jhaidi/blog-front.git',
-      path: '/usr/local/front',
+      path: '/usr/local/blog-front',
       'post-deploy': 'git pull && npm run build &&pm2 startOrReload ecosystem.config.js --env production'
     }
   }
