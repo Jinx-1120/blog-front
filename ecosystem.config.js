@@ -1,6 +1,6 @@
 module.exports = {
   apps: [{
-    name: 'jinhaidi.cn',
+    name: 'client',
     script: 'build/main.js',
     env: {
       COMMON_VARIABLE: 'true'
@@ -9,8 +9,8 @@ module.exports = {
       NODE_ENV: 'production'
     },
     log_date_format: 'YYYY-MM-DD HH:mm Z',
-    out_file: '/var/log/blogfront/pm2-out.log',
-    error_file: '/var/log/blogfront/pm2-error.log'
+    out_file: './log/pm2-out.log',
+    error_file: '/log/pm2-error.log'
   }],
   deploy: {
     production: {

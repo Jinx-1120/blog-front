@@ -32,8 +32,7 @@
               ref="search"
               @keyup.enter="search"
               :maxlength="10"/>
-            <!-- <div class="eks" @click.stop="search"></div> -->
-            <i class="iconfont icon-search"></i>
+            <i @click.stop="search" class="iconfont icon-search"></i>
           </div>
         </div>
       </div>

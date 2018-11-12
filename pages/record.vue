@@ -113,7 +113,7 @@ export default {
     }
 }
 .sitemap-article-list {
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
 
     .year-name {
       font-size: 1.5rem;
@@ -121,14 +121,14 @@ export default {
     }
 
     .month-list {
-      margin: 1rem 2rem;
+      margin: 1rem .5rem;
 
       .month-name {
         margin-bottom: .5rem;
       }
 
       .sitemap-list {
-        padding: .5rem 2rem;
+        padding: .5rem .5rem;
 
         article {
           position: relative;
