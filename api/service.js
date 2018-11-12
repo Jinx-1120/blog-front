@@ -20,4 +20,8 @@ export function likeArt(params) {
   return ajax.post(`/article/likeArticle/${params}`).then(res => res.data)
 }
 
+export function searchArt(params) {
+  return ajax.get('search', {params}).then(res => res.data)
+}
+
 

@@ -32,6 +32,10 @@ export const actions = {
   async likeArt({commit}, payload) {
     const res = await http.likeArt(payload).catch(err => console.log(err))
     return res
+  },
+  async searchArt({commit}, payload) {
+    const res = await http.searchArt(payload).catch(err => console.log(err))
+    commit('article/setArtList', res.data.docs)
   }
 }
 /**

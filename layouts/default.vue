@@ -115,12 +115,13 @@ export default {
 <style lang="scss" scoped>
 
 .app {
+  background: url('../static/background.png') repeat;
+  // position: fixed;
+  // width: 100%;
+  // height: 80%;
+  // opacity: .3;
   >.background{
-    background: url('../static/background.png') no-repeat;
-    position: fixed;
-    width: 100%;
-    height: 90%;
-    opacity: .3;
+
   }
   >.app-aside {
     position: fixed;
@@ -155,6 +156,9 @@ export default {
     >.main-container {
       min-height: calc(100vh - 140px);
       padding-top: $normal-pad;
+      max-width: 80%;
+      background: rgba(255, 255, 255, 0.64);
+      margin: 0 auto;
     }
 
     >.main-container.mobile {
