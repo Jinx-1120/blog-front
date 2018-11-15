@@ -1,0 +1,19 @@
+
+{
+  "apps": [
+    {
+      "name": "front",
+      "script": "./server/index.js",
+      "log_date_format": "YYYY-MM-DD HH:mm Z",
+      "error_file": "/var/log/node-front/node-front.err.log",
+      "out_file": "/var/log/node-front/node-front.out.log",
+      "instances": 3,
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}
