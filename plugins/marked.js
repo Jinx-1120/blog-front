@@ -26,7 +26,7 @@ const paragraphParse = text => {
 
 // // 对图片进行弹窗处理, 及懒加载处理
 const imageParse = (src, title, alt) => {
-  src = src.replace(/^http:\/\//ig, "/proxy/")
+  src = src.replace(/^http:\/\//ig, "http://")
   return `<img src="${src}"
                title="${title || alt }"
                alt="${alt || title || src}"

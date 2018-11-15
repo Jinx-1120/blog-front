@@ -35,7 +35,7 @@ export const actions = {
   },
   async searchArt({commit}, payload) {
     const res = await http.searchArt(payload).catch(err => console.log(err))
-    commit('article/setArtList', res.data.docs)
+    commit('article/setArtList', res.data)
   }
 }
 /**
