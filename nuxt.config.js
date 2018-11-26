@@ -10,8 +10,16 @@ module.exports = {
     title: "Jhd's Blog - 吾生也有涯而，知也无涯。",
     meta: [
       { charset: 'utf-8' },
+      {
+        name: 'google-site-verification',
+        content: '9KqwpHpvyVi_-qVysL84xdbPb_bhjIGkFox5yCDWBvU'
+      },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      {
+        hid: 'description',
+        name: 'description',
+        content: '吾生也有涯而，知也无涯。'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/icon.png' }
