@@ -182,7 +182,8 @@ header {
   }
 
   &.fixed {
-    transform: translateY(-100%);
+    // transform: translateY(-100%);
+    opacity: 0.9;
   }
 
   &.darken {

@@ -38,7 +38,9 @@ module.exports = {
     {
       src: '~/assets/scss/index.scss',
       lang: 'scss'
-    }
+    },
+    'swiper/dist/css/swiper.css',
+    'highlight.js/styles/ocean.css'
   ],
 
   /*
@@ -51,7 +53,11 @@ module.exports = {
     },
     {
       src: './plugins/filters.js'
-    }
+    },
+    {
+      src: '~/plugins/swiper.js',
+      ssr: false
+    },
   ],
 
   /*

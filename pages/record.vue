@@ -75,7 +75,7 @@ export default {
 .tag-main{
   padding: 30px 20px 50px 20px;
   border-radius: 5px;
-  // background: #f3f3f3;
+  background: $bg-color;
 }
 .tag-wrap{
   >.item-wrap{

@@ -8,7 +8,10 @@ export const actions = {
     store.commit('options/setMobileLayout', isMobile)
 
     const initAppData = [
-      store.dispatch('getTagList')
+      store.dispatch('getTagList'),
+      store.dispatch('getHotList', {
+        hot: true
+      }),
     ]
     return Promise.all(initAppData)
   },
@@ -36,6 +39,10 @@ export const actions = {
   async searchArt({commit}, payload) {
     const res = await http.searchArt(payload).catch(err => console.log(err))
     commit('article/setArtList', res.data)
+  },
+  async getHotList({commit}, payload) {
+    const res = await http.getArtList(payload).catch(err => console.log(err))
+    commit('article/setHotList', res.data)
   }
 }
 /**

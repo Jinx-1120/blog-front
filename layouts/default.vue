@@ -16,28 +16,11 @@
         </div>
       </transition>
 
-      <transition-group
-          tag="div"
-          class="container clearfix main-container"
-          name="slide-up"
-          :class="{ 'mobile': mobileLayout }">
-        <div
-          class="content-left"
-          key="1"
-          :class="{
-            'full-page': !isAsdiePage,
-            'mobile-layout': mobileLayout
-          }">
+      <transition-group tag="div" class="container clearfix main-container" name="slide-up" :class="{ 'mobile-layout ': mobileLayout }">
+        <!-- <nav-view class="left" key="1" v-if="!mobileLayout"></nav-view> -->
+        <div class="content-left left" key="2" :class="{ 'full-page': !isAsdiePage, 'mobile-layout': mobileLayout }">
           <nuxt></nuxt>
         </div>
-        <!-- <div
-        class="content-right"
-        v-if="isAsdiePage && !mobileLayout && $route.name !== 'index'"
-        key="2">
-          <keep-alive>
-            <asideView></asideView>
-          </keep-alive>
-        </div> -->
       </transition-group>
 
       <transition name="fade" mode="">
@@ -55,7 +38,7 @@ import myFooter from '~/components/layouts/footer'
 import myHeader from '~/components/layouts/header'
 import asideView from '~/components/layouts/aside'
 import scollTop from '~/components/layouts/scollTop'
-
+import navView from '~/components/layouts/navView'
 import mobileSide from '~/components/mobile/aside'
 import mobileHeader from '~/components/mobile/header'
 
@@ -67,6 +50,11 @@ export default {
       }
     }
   },
+  data () {
+    return {
+      path: this.$router.options.base
+    }
+  },
 
   components: {
     mobileHeader,
@@ -74,7 +62,8 @@ export default {
     myHeader,
     asideView,
     mobileSide,
-    scollTop
+    scollTop,
+    navView
   },
 
   computed: {
@@ -98,7 +87,11 @@ export default {
       return this.$store.state.options.isError
     }
   },
-
+  watch: {
+    path () {
+      console.log(this.path)
+    }
+  },
   methods: {
     hideSide () {
       this.$store.commit('options/setMobileSidebar', false)
@@ -108,6 +101,7 @@ export default {
   mounted () {
     const theme = window.localStorage.getItem('THEME') || 'light'
     document.body.id = theme
+    console.log(this.$router.options.base)
   }
 }
 </script>
@@ -116,12 +110,8 @@ export default {
 
 .app {
   background: url('../static/background.png') repeat;
-  // position: fixed;
-  // width: 100%;
-  // height: 80%;
-  // opacity: .3;
-  >.background{
-
+  >.left{
+    float: left;
   }
   >.app-aside {
     position: fixed;
@@ -152,12 +142,11 @@ export default {
 
   >.app-main {
     @include transition(all .3s ease-out);
-    background: #cccccc3d;
+    background: #ffffff42;
     >.main-container {
       min-height: calc(100vh - 140px);
-      padding-top: $normal-pad;
-      max-width: 80%;
-      background: rgba(255, 255, 255, 0.64);
+      width: 90em;
+      padding-top: 10px;
       margin: 0 auto;
     }
 
@@ -180,14 +169,17 @@ export default {
 
 .content-left.full-page,
 .content-left.mobile-layout {
-  width: 100%;
+  width:78em;
+  // background: $bg_color;
+  margin: 1em 0;
+  margin-left: 4.5em;
   @include css3-prefix(transition, width .5s cubic-bezier(1.0, 0.5, 0.8, 1.0));
 }
 
 .content-left.mobile-layout {
   width: 100%;
   margin: 0;
-  padding: 1rem;
+  // padding: 1rem;
   padding-top: 4.5rem;
 }
 
@@ -196,7 +188,7 @@ export default {
   float: right;
 }
 
-.mobile {
-  width: 100%;
+.mobile-layout {
+  width: 100%!important;
 }
 </style>

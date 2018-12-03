@@ -1,5 +1,5 @@
 <template>
-  <div class="article-list" :class="{'mobile': mobileLayout}">
+  <div class="article-list" :class="{'mobile-article': mobileLayout}">
 
     <div class="article-cont">
       <h3 class="">{{ article.title }}</h3>
@@ -192,11 +192,15 @@ export default {
 </script>
 
 <style lang="scss">
-
+.mobile-article {
+  width: 100%!important;
+  padding: 10px 18px!important;
+}
 .article-list {
   width: $container-min-width;
   margin: 0 auto;
-
+  padding: 10px 40px;
+  background: $bg-color;
   >.article-cont {
 
     >.meta {

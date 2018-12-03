@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'iconfont';
   /* project id 873884 */
-  src: url('//at.alicdn.com/t/font_873884_fdbhruup8q.eot');
-  src: url('//at.alicdn.com/t/font_873884_fdbhruup8q.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_873884_fdbhruup8q.woff') format('woff'),
-    url('//at.alicdn.com/t/font_873884_fdbhruup8q.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_873884_fdbhruup8q.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_873884_pvz0hytaf1.eot');
+  src: url('//at.alicdn.com/t/font_873884_pvz0hytaf1.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_873884_pvz0hytaf1.woff') format('woff'),
+    url('//at.alicdn.com/t/font_873884_pvz0hytaf1.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_873884_pvz0hytaf1.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -20,6 +20,10 @@
   content: "\e6a1";
 }
 
+.icon-hotfill:before {
+  content: "\e758";
+  color: red;
+}
 .icon-emoji:before {
   content: "\e600";
 }

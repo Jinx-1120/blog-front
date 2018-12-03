@@ -151,7 +151,8 @@ export default {
 .about {
   width: $container-min-width;
   margin: 0 auto;
-
+  padding: 10px 33px;
+  background: $bg-color;
   >.title {
     position: relative;
     padding: 0.5rem 0rem;

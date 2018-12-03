@@ -3,7 +3,7 @@
     tag="div"
     name="fade"
     class="scoll-aside"
-    :class="{ mobile: mobileLayout }"
+    :class="{ 'mobile-scroll-aside': mobileLayout }"
     v-if="$route.path !== '/'">
     <!-- <a
       href="javascript:;"
@@ -133,7 +133,7 @@ export default {
     }
   }
 
-  &.mobile {
+  &.mobile-scroll-aside {
     width: 3rem;
     right: 0rem;
     bottom: 3rem;

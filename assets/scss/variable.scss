@@ -1,13 +1,16 @@
 
 // container
-$container-left: 38rem;
+$container-left: 68rem;
 $container-min-width: $container-left;
 $container-width: $container-min-width;
 $container-right: 16rem;
-
-
+$text-dark: var(--text-dark);
+$primary-opacity-5: #0088f580;
+$bg_color: #ffffff99;
+$font:'specialSymbol, DINRegular, -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Hiragino Sans GB", "Segoe UI", "Microsoft YaHei", "微软雅黑", sans-serif;';
 $gravatar: 36px;
 $header-height: 4rem;
+$link-hover: #0000ffdb;
 
 $module-bg: var(--module-bg);
 $module-hover-bg: var(--module-hover-bg);
@@ -20,6 +23,7 @@ $black: #000;
 $green: green;
 $blue: blue;
 $red: red;
+$accent: #4caf50;
 
 $red-light-1: var(--theme-red-light-1);
 

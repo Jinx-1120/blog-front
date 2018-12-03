@@ -3,6 +3,7 @@ export const state = () => ({
   // 文章
   artList: [],
   arts: [],
+  hotList: [],
   details: {}
 })
 
@@ -18,6 +19,9 @@ export const mutations = {
    },
    updateFabulous (state, data) {
      state.details.fabulous = data
+   },
+   setHotList (state, data) {
+     state.hotList = data
    }
 }
 

@@ -22,7 +22,7 @@
             </div>
             <div class="artview-contant">
               <p class="title"><nuxt-link :to="`/article/${item._id}`">{{ item.title }}</nuxt-link></p>
-              <p class="abstrack">{{ item.description | text(50)}}</p>
+              <p class="abstrack">{{ item.content | text(100)}}</p>
               <div class="meta">
                 <span class="time">
                   <i class="iconfont icon-date"></i>
@@ -79,11 +79,12 @@ export default {
 <style scoped lang="scss">
 
 .article-box {
-  width: $container-left;
+  width: 52em;
   margin: 0 auto;
-
+  margin-top:1em;
   >.article-item {
     position: relative;
+    background: #efefef;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
@@ -91,7 +92,7 @@ export default {
     padding: 0.5rem;
     margin-bottom: $xlg-pad;
     color: $black;
-    background: #fff;
+    // background: #fff;
 
     .title {
       // margin-bottom: $sm-pad;
@@ -128,11 +129,11 @@ export default {
     }
 
     >.content {
-
+      width: 100%;
       >.artview-wrap{
         display: flex;
         >.artview-img{
-          flex: 1;
+          flex: 2;
           display: flex;
           // justify-content: center;
           align-items: center;
@@ -156,11 +157,11 @@ export default {
           }
           img {
             width: calc(100% + .5em);
-            height:110px;
+            height:155px;
           }
         }
         >.artview-contant{
-          flex: 4;
+          flex: 5;
           display: flex;
           flex-direction: column;
           >div{
@@ -172,6 +173,7 @@ export default {
           >.abstrack {
             flex:4;
             font-size: $font-size-middle;
+            word-break: break-all;
           }
           >.meta{
             flex:1;
@@ -233,7 +235,6 @@ export default {
   }
   >.article-item:hover {
     position: relative;
-    background: #c5c5c580;
     img {
       transform: translateX(-.5em);
     }
