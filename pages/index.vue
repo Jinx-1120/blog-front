@@ -72,6 +72,7 @@
 
 import articleView from '~/components/common/article'
 import swiperView from '~/components/layouts/swiper'
+// import scroll from '~/utils/scroll'
 
 export default {
 

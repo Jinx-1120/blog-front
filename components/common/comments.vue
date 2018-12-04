@@ -8,13 +8,13 @@
       </div>
       <span class="line"></span>
       <!-- <div class="sort">
-        <a href="" 
+        <a href=""
            class="sort-btn"
-           :class="{ actived: Object.is(sortMode, 1) }" 
+           :class="{ actived: Object.is(sortMode, 1) }"
            @click.stop.prevent="sortComemnts(1)">最新</a>
-        <a href="" 
+        <a href=""
            class="sort-btn"
-           :class="{ actived: Object.is(sortMode, 2) }" 
+           :class="{ actived: Object.is(sortMode, 2) }"
            @click.stop.prevent="sortComemnts(2)">最热</a>
       </div> -->
     </div>
@@ -23,7 +23,7 @@
         <div class="user">
           <div class="gravatar" v-if="!mobileLayout">
             <img :alt="user.name || '匿名用户'"
-                 :src="user.gravatar || '/images/user.png'">
+                 :src="user.gravatar || 'https://s.gravatar.com/avatar/6b929e1ca23aa46b3710581b568bf6b5'">
           </div>
         </div>
         <div class="editor">
@@ -38,13 +38,13 @@
                 </span>
                 <a href="" class="cancel iconfont icon-cancel" @click.stop.prevent="cancelCommentReply"></a>
               </div>
-              <div class="reply-preview" 
+              <div class="reply-preview"
                     v-html="marked(replyCommentSlef.content).length > 100
                     ? marked(replyCommentSlef.content).slice(0, 100) + '...'
                     : marked(replyCommentSlef.content)"></div>
             </div>
             <div class="markdown" key="2">
-              <div class="markdown-editor" 
+              <div class="markdown-editor"
                   ref="markdown"
                   contenteditable="true"
                   placeholder="写下你的评论..."
@@ -91,8 +91,8 @@
               <a href="" class="code" title="code" @click.stop.prevent="insertContent('code')">
                 <i class="iconfont icon-code"></i>
               </a>
-              <button type="submit" 
-                      class="submit" 
+              <button type="submit"
+                      class="submit"
                       :disabled="comment.posting"
                       @click="submitComment($event)">
                 <span>{{ comment.posting ? '发布中...' : '发布' }}</span>
@@ -107,9 +107,9 @@
         <div class="user" v-if="!userCacheMode || userCacheEditing">
           <div class="name">
             <input required
-                   type="text" 
+                   type="text"
                    name="name"
-                   placeholder="称呼（必填）" 
+                   placeholder="称呼（必填）"
                    v-model="user.name"
                    maxlength="10">
           </div>
@@ -117,16 +117,16 @@
             <input required
                    type="email"
                    name="email"
-                   placeholder="邮箱（必填，不会公开）" 
-                   v-model="user.email" 
+                   placeholder="邮箱（必填，不会公开）"
+                   v-model="user.email"
                    @blur="upadteUserGravatar"
                    maxlength="40">
           </div>
           <div class="site">
-            <input 
+            <input
               type="url"
               name="url"
-              placeholder="网站（http, https:// 开头，非必填）" 
+              placeholder="网站（http, https:// 开头，非必填）"
               v-model="user.site"
               maxlength="40">
           </div>
@@ -172,13 +172,13 @@
             </div>
             <div class="cm-body">
               <div class="cm-header">
-                <a class="user-name" 
-                   target="_blank" 
+                <a class="user-name"
+                   target="_blank"
                    rel="external nofollow"
-                   :href="comment.author.site" 
+                   :href="comment.author.site"
                    @click.stop="clickUser($event, comment.author)">
                     <img :alt="comment.author.name || '匿名用户'"
-                        :src="gravatar(comment.author.email) || '/images/anonymous.jpg'" 
+                        :src="gravatar(comment.author.email) || '/images/anonymous.jpg'"
                         v-if="mobileLayout"
                         width="24px"
                         style="margin-right: 10px;">
@@ -195,7 +195,7 @@
                       <strong v-if="fondReplyParent(comment.pid)">{{ fondReplyParent(comment.pid) }}</strong>
                     </a>
                   </p>
-                  <div 
+                  <div
                   class="reply-content"
                   v-html="fondReplyParentContent(comment.pid).length > 150
                   ? fondReplyParentContent(comment.pid).slice(0, 150) + '...'
@@ -204,8 +204,8 @@
                 <div v-html="marked(comment.content)"></div>
               </div>
               <div class="cm-footer">
-                <a href="" 
-                   class="like" 
+                <a href=""
+                   class="like"
                    :class="{ liked: commentLiked(comment._id), actived: !!comment.likes }"
                    @click.stop.prevent="likeComment(comment)">
                   <i class="iconfont icon-zan"></i>
@@ -229,9 +229,10 @@
 <script>
   import markdown from '~/plugins/marked'
   import gravatar from '~/plugins/gravatar'
-  import { scrollTo } from '~/utils/scroll'
+  import { scrollTo } from '~/utils/scroll-to-anywhere'
   import loadingCom from '~/components/common/pageLoading/pageLoading'
   import _ from '~/utils/underscore'
+
   export default {
     name: 'comment',
 
@@ -315,7 +316,7 @@
         if (scrollHeight -  scrolleTop - windowHeight <= 200) {
           if (!this.comment.data.pagination.total_page && !this.comment.fetching) {
             this.loadComemntList()
-          } else if (this.haveMore && !this.comment.fetching) {
+          } else if (this.haveMore ) {
             this.loadComemntList({
               current_page: this.comment.data.pagination.current_page + 1
             })
@@ -336,9 +337,6 @@
       gravatar(email) {
         if (!this.regexs.email.test(email)) return null
         let gravatar_url = gravatar.url(email, {
-          // size: '96', 
-          // rating: 'pg',
-          // default: 'https://gravatar.surmon.me/anonymous.jpg', 
           protocol: 'https'
         });
         return gravatar_url
@@ -499,14 +497,14 @@
       // 点赞某条评论
       likeComment(comment) {
         if (this.commentLiked(comment._id)) return false
-        this.$store.dispatch('likeComment', { type: 1, _id: comment._id })
-        .then(data => {
-          this.likeComments.push(comment._id)
-          localStorage.setItem('LIKE_COMMENTS', JSON.stringify(this.likeComments))
-        })
-        .catch(err => {
-          console.warn('评论点赞失败', err)
-        })
+        // this.$store.dispatch('likeComment', { type: 1, _id: comment._id })
+        // .then(data => {
+        //   this.likeComments.push(comment._id)
+        //   localStorage.setItem('LIKE_COMMENTS', JSON.stringify(this.likeComments))
+        // })
+        // .catch(err => {
+        //   console.warn('评论点赞失败', err)
+        // })
       },
       // 获取某条评论是否被点赞
       commentLiked(comment_id) {
@@ -549,15 +547,16 @@
           content: this.comemntContentText,
           author: JSON.stringify(this.user)
         })
-        if (res.code === 1) {
+        if (res.code === 200) {
           this.previewMode = false
           this.userCacheMode = true
           this.cancelCommentReply()
           this.clearCommentContent()
           this.$nextTick(() => {
-            scrollTo(document.querySelector(`#comment-item-${res.result.id}`), 200, { offset: 0 })
+            scrollTo(document.querySelector(`#post-box`), 200, { offset: 0 })
           })
           localStorage.setItem('BLOG_USER', JSON.stringify(this.user))
+          this.loadComemntList()
         } else alert('操作失败')
       }
     }
@@ -1025,16 +1024,16 @@
             height: 2em;
             padding: .5rem;
             background: transparent;
-            border: 1px solid $border-color;
+            border: 1px solid #ccc;
             border-radius: 4px;
 
 
             &:hover {
-              border-color: $form-hover;
+              border-color: #2196f3;
             }
 
             &:focus {
-              border-color: $black;
+              border-color: #2196f3;
             }
           }
         }
@@ -1097,7 +1096,7 @@
               max-height: 10em;
               overflow: auto;
               padding: 1rem;
-              border: 1px solid $border-color;
+              border: 1px solid #2196f3;
               border-radius: 4px;
             }
           }
@@ -1115,12 +1114,12 @@
               cursor: auto;
               font-size: .95em;
               line-height: 1.8em;
-              border: 1px solid $border-color;
+              border: 1px solid #2196f3;
               border-radius: 4px;
 
               &:hover {
                 border-color: $form-hover;
-                
+
               }
 
               &:focus {
@@ -1198,7 +1197,7 @@
 
             > .submit {
               float: right;
-              border: 0;
+              border: 1px solid #2196f3;
               padding: 0 .5rem;
 
               span {
@@ -1206,7 +1205,9 @@
               }
 
               &:hover {
-                background: rgba(0, 0, 0, 0.12);
+                background: green;
+                border: 1px solid green;
+                color: #fff;
               }
             }
           }

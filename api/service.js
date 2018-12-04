@@ -24,4 +24,14 @@ export function searchArt(params) {
   return ajax.get('search', {params}).then(res => res.data)
 }
 
+// 获取评价
+export function getComment(params) {
+  return ajax.get('/comments', { params }).then(res => res.data)
+}
+
+// 提交评价
+export function postComment(data) {
+  return ajax.post('/comment', data).then(res => res.data)
+}
+
 

@@ -2,7 +2,7 @@
   <div class="article-list" :class="{'mobile-article': mobileLayout}">
 
     <div class="article-cont">
-      <h3 class="">{{ article.title }}</h3>
+      <h1 class="title">{{ article.title }}</h1>
       <div class="meta">
         <span class="time">{{ article.create_at | dateFormat('yyyy.MM.dd hh:mm') }}</span>
         <span class="num" v-if="!mobileLayout">字数 {{ article.content.length }}</span>
@@ -50,7 +50,7 @@
     </div>
 
     <div class="comment">
-      <!-- <comments :post-id="article.id" v-if="article.title"></comments> -->
+      <comments :post-id="article._id" v-if="article.title"></comments>
     </div>
 
     <aside v-if="!mobileLayout" >
@@ -88,8 +88,9 @@
 import markdown from '~/plugins/marked'
 // import share from '~/components/layouts/share'
 import dialogCom from '~/components/common/dialog'
-// import comments from '~/components/common/comments'
-// import { scrollTo } from '~/utils/scroll'
+import comments from '~/components/common/comments'
+  import { scrollTo } from '~/utils/scroll-to-anywhere'
+
 // import lazyImg from '../../utils/lazyImg'
 import {mapState} from 'vuex'
 export default {
@@ -116,7 +117,7 @@ export default {
     }
   },
 
-  components: { dialogCom },
+  components: { dialogCom, comments},
 
   computed: {
     ...mapState({
@@ -202,12 +203,15 @@ export default {
   padding: 10px 40px;
   background: $bg-color;
   >.article-cont {
-
+    >.title {
+      line-height: 2;
+      text-align: center;
+    }
     >.meta {
       margin-top: .3rem;
       font-size: .8rem;
       color: #666666;
-
+      text-align: center;
       span {
         margin-right: .5rem;
       }
@@ -219,14 +223,15 @@ export default {
     }
 
     >.article-thumb {
-      margin: $lg-pad 0;
+      text-align: center;
       img {
         max-width: 100%;
+        margin: $lg-pad 0;
       }
     }
 
     .content {
-      margin: $lg-pad 0;
+      margin:0 0 $lg-pad 0;
       color: $black;
       word-wrap: break-word;
 
@@ -321,7 +326,9 @@ export default {
           width: 100%;
         }
       }
-
+      h1 {
+        display: none;
+      }
       h1,
       h2,
       h3,
