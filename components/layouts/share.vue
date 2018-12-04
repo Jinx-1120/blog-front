@@ -53,7 +53,7 @@ export default {
 
   computed: {
     url () {
-      return `https://jkchao.cn${this.$route.fullPath}`
+      return `https://jinhaidi.cn${this.$route.fullPath}`
     },
     mobileLayout () {
       return this.$store.state.options.mobileLayout
@@ -67,10 +67,10 @@ export default {
     },
     title () {
       try { if (document) return document.title }
-      catch (err) { return 'jkchao.cn' }
+      catch (err) { return 'jinhaidi.cn' }
     },
     shareWindow (url) {
-      url = url.includes('mailto') ? url.replace(/\s|\||jkchao.cn/g, '') : encodeURI(url)
+      url = url.includes('mailto') ? url.replace(/\s|\||jinhaidi.cn/g, '') : encodeURI(url)
       // console.log(url)
       // 给打开的窗口命名
       let winName = "newWin"
