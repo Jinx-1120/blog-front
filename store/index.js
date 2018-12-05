@@ -76,15 +76,14 @@ export const actions = {
   },
 
   // 发布评论
-  async postComment({
-    commit
-  }, comment) {
+  async postComment({ commit }, comment) {
     commit('comment/POST_ITEM')
     const res = await http.postComment(comment)
       .catch(err => console.error(err))
-    if (res && res.code === 1) {
+    console.log(res)
+    if (res && res.code === 200) {
       commit('comment/POST_ITEM_SUCCESS', res)
-      if (comment.post_id !== 0) commit('article/ADD_COMMENT')
+      // if (comment.post_id !== 0) commit('article/ADD_COMMENT')
     } else commit('comment/POST_ITEM_FAILURE')
     return res
   },

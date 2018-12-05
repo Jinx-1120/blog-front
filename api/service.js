@@ -21,7 +21,7 @@ export function likeArt(params) {
 }
 
 export function searchArt(params) {
-  return ajax.get('search', {params}).then(res => res.data)
+  return ajax.get('/search', {params}).then(res => res.data)
 }
 
 // 获取评价

@@ -44,7 +44,7 @@ export const mutations = {
   POST_ITEM_SUCCESS(state, action) {
     state.posting = false
     state.data.pagination.total += 1
-    state.data.data.push(action.result)
+    state.data.data.push(action.data)
   },
 
   POST_ITEM_FAILURE(state) {

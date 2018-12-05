@@ -90,9 +90,11 @@ export default {
         this.open = true
         return
       }
-      this.$router.push(`/search/${this.keyword}`)
-      this.open = false
-      this.keyword = ''
+      if (this.keyword != '') {
+        this.$router.push(`/search/${this.keyword}`)
+        this.open = false
+        this.keyword = ''
+      }
     },
 
     togglePlay() {
