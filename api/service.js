@@ -34,4 +34,10 @@ export function postComment(data) {
   return ajax.post('/comment', data).then(res => res.data)
 }
 
+// 获取归档
+
+export function getRecords() {
+  return ajax.get('/getrecords').then(res => res.data)
+}
+
 

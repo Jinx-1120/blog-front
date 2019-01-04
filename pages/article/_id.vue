@@ -204,12 +204,12 @@ export default {
   background: $bg-color;
   >.article-cont {
     >.title {
-      line-height: 2;
+      line-height: 1.5;
       text-align: center;
     }
     >.meta {
       margin-top: .3rem;
-      font-size: .8rem;
+      font-size: 1rem;
       color: #666666;
       text-align: center;
       span {
@@ -439,6 +439,7 @@ export default {
         padding: .2rem .4rem;
         margin: 0;
         font-size: 85%;
+        font-size: 31px;
         border-radius: $radius;
         background-color: $module-hover-bg;
       }

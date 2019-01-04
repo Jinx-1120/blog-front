@@ -9,7 +9,7 @@
     "build": "nuxt build && backpack build",
     "start": "cross-env NODE_ENV=production node build/main.js",
     "generate": "nuxt generate",
-    "deploy": "pm2 deploy ecosystem.config.js production"
+    "deploy": "NODE_ENV=production pm2 start server/index.js"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",

@@ -7,7 +7,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: "Jhd's Blog - 吾生也有涯而，知也无涯。",
+    title: "Jinhaidi's blog - 吾生也有涯而，知也无涯。",
     meta: [
       { charset: 'utf-8' },
       {
@@ -18,7 +18,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: '吾生也有涯而，知也无涯。'
+        content: '靳海迪的个人日志 --- 吾生也有涯而，知也无涯。'
       }
     ],
     link: [

@@ -80,9 +80,9 @@ export default {
 
   transition: 'fade',
 
-  fetch ({ store }) {
-    return store.dispatch('getArtList',{'isAll': false})
-  },
+  // fetch ({ store }) {
+  //   return store.dispatch('getArtList',{'isAll': false})
+  // },
 
   data () {
     return {

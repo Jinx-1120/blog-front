@@ -50,7 +50,7 @@
             v-show="showBox"
             @mouseover="showBox = true"
             @mouseleave="showBox = false">
-              <img src="../static/code.png" alt="code" width="150px">
+              <img src="../static/code.jpg" alt="code" width="150px">
               <!-- <span class="arrow"></span> -->
             </div>
           </transition>

@@ -22,9 +22,9 @@
       <div class="year-list" v-for="(item,index) in artList" :key="index">
 
         <p class="year-name">{{item.year}}</p>
-        <ul class="month-list" v-for="(child,ind) in item.months" :key="ind">
-          <p class="month-name">{{child.month + 1}} 月</p>
-          <li class="sitemap-list" v-for="data in child.data" :key="data.title">
+        <ul class="month-list" v-for="(child,ind) in item.monthList" :key="ind">
+          <p class="month-name">{{child.month}} 月</p>
+          <li class="sitemap-list" v-for="data in child.articleList" :key="data._id">
             <article>
               <time>{{data.createTime | dateFormat('MM.dd')}}</time>
               <nuxt-link :to="`/article/${data._id}`">
@@ -50,7 +50,7 @@ export default {
     }
   },
   fetch ({ store }) {
-    return store.dispatch('getArtList',{'isAll': true})
+    return store.dispatch('getRecords')
   },
   computed: {
     ...mapState({
