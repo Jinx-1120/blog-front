@@ -66,6 +66,7 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
+    '@nuxtjs/style-resources'
     // '@gauseen/nuxt-proxy'
   ],
   /*
@@ -92,8 +93,7 @@ module.exports = {
       require('postcss-hexrgba')()
     ],
     styleResources: {
-      scss: ['./assets/scss/variable.scss', './assets/scss/mixin.scss'],
-      options: {}
+      scss: ['./assets/scss/variable.scss', './assets/scss/mixin.scss']
     }
   }
 }
