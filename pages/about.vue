@@ -1,9 +1,4 @@
-/*
- * @Author: jhd
- * @Date: 2018-10-18 10:06:36
- * @Description: file content
- */
- <template>
+<template>
   <div class="about" :class="{'mobile': mobileLayout}">
     <div class="title" >
       <span class="title-name">关于我</span>
@@ -79,7 +74,8 @@
 
     <p class="title more" :class="{'title-mobile': mobileLayout}">
       <span class="title-name">Friends</span>
-      <span class="line"></span>
+      <!-- <span class="line"></span> -->
+      <a href="http://jiyingda.com/" target="_blank">茶泡饭</a>
     </p>
     <!-- <div class="friend">
       <a

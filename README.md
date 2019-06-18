@@ -1,6 +1,6 @@
 # blog-front
 
-> blog front use Nuxt
+> blog front use nuxtjs
 
 ## Build Setup
 

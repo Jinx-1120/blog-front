@@ -24,7 +24,6 @@ export default {
     return { title: `${this.keyword} | keyword` }
   },
   fetch ({ store, params }) {
-    console.log(params)
     return store.dispatch('searchArt', params)
   },
   data () {

@@ -1,12 +1,9 @@
-const pkg = require('./package')
-
 module.exports = {
   mode: 'universal',
-
   /*
-  ** Headers of the page
-  */
-  head: {
+   ** Headers of the page
+   */
+   head: {
     title: "Jinhaidi's blog - 吾生也有涯而，知也无涯。",
     meta: [
       { charset: 'utf-8' },
@@ -25,75 +22,59 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/icon.png' }
     ]
   },
-
   /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
-
+   ** Customize the progress-bar color
+   */
+  loading: { color: '#17a2b8' },
   /*
-  ** Global CSS
-  */
+   ** Global CSS
+   */
   css: [
-    {
-      src: '~/assets/scss/index.scss',
-      lang: 'scss'
-    },
     'swiper/dist/css/swiper.css',
-    'highlight.js/styles/ocean.css'
+    'highlight.js/styles/ocean.css',
+    {
+      src: '@/assets/scss/index.scss',
+      lang: 'sass'
+    }
   ],
-
+  styleResources: {
+    scss: ['./assets/scss/variable.scss', './assets/scss/mixin.scss']
+  },
   /*
-  ** Plugins to load before mounting the App
-  */
+   ** Plugins to load before mounting the App
+   */
   plugins: [
     {
       src: '~/plugins/clickOutside.js',
       ssr: false
-    },
-    {
+    }, {
       src: './plugins/filters.js'
-    },
-    {
+    }, {
       src: '~/plugins/swiper.js',
       ssr: false
     },
   ],
-
   /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
+    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    // '@nuxtjs/eslint-module',
     '@nuxtjs/style-resources'
-    // '@gauseen/nuxt-proxy'
   ],
   /*
-  ** Axios module configuration
-  */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
-
+   ** Axios module configuration
+   ** See https://axios.nuxtjs.org/options
+   */
+  axios: {},
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-
-    },
-    // postcss
-    postcss: [
-      require('postcss-nested')(),
-      require('postcss-responsive-type')(),
-      require('postcss-hexrgba')()
-    ],
-    styleResources: {
-      scss: ['./assets/scss/variable.scss', './assets/scss/mixin.scss']
-    }
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) {}
   }
 }
