@@ -11,7 +11,7 @@
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
     "start": "nuxt start",
-    "deploy": "npm run build && pm2 start npm --name 'blog-front' -- run start",
+    "deploy": "npm i -g pm2 && npm run build && pm2 start npm --name 'blog-front' -- run start",
     "generate": "nuxt generate"
   },
   "dependencies": {
