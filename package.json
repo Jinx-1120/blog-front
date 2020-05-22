@@ -10,7 +10,8 @@
     "test": "jest",
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production node server/index.js",
+    "start": "nuxt start",
+    "deploy": "npm run build && pm2 start npm --name 'blog-front' -- run start",
     "generate": "nuxt generate"
   },
   "dependencies": {
