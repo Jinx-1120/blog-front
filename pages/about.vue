@@ -21,7 +21,7 @@
         </div>
         <div class="list">
           <i class="iconfont icon-game"></i>
-          <span class="list-content">LOL、刺激战场</span>
+          <span class="list-content">LOL</span>
         </div>
         <div class="list">
           <i class="iconfont icon-coffee"></i>
@@ -79,7 +79,8 @@
 
     <p class="title more" :class="{'title-mobile': mobileLayout}">
       <span class="title-name">Friends</span>
-      <span class="line"></span>
+      <a href="http://jiyingda.com/" target="_blank">茶泡饭</a>
+      <a href="https://blog.xubiaosunny.online/" target="_blank">徐彪的网络日志</a>
     </p>
     <!-- <div class="friend">
       <a
