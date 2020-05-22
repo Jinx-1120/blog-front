@@ -1,10 +1,10 @@
 module.exports = {
   mode: 'universal',
   /*
-   ** Headers of the page
-   */
-   head: {
-    title: "Jinhaidi's blog - 吾生也有涯而，知也无涯。",
+  ** Headers of the page
+  */
+  head: {
+    title: "靳海迪的个人日志 - 吾生也有涯而，知也无涯。",
     meta: [
       { charset: 'utf-8' },
       {
