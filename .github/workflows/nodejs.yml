@@ -26,3 +26,13 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run deploy
+
+    # SSH
+    - name: Exec deploy script with SSH
+      uses: appleboy/ssh-action@master
+      with:
+        command_timeout: 8m
+        host: ${{ secrets.ALIYUM_HOST }}
+        username: ${{ secrets.ALIYUM_USER }}
+        password: ${{ secrets.ALIYUM_PWD }}
+        script: sh ${{ secrets.PATH }}/blog-front/.deploy/main.sh
