@@ -110,6 +110,8 @@ export default {
 
 .app {
   background: url('../static/background.png') repeat;
+  overflow-y: scroll;
+  height: calc(100vh - 60px);
   >.left{
     float: left;
   }
