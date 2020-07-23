@@ -12,6 +12,6 @@ echo "[deploy] pulling source code..."
 git fetch --all && git reset --hard origin/master && git pull
 git checkout master
 echo "[deploy] building..."
-npm ci
+npm install
 npm run build
 echo "[deploy] Rebuild done."
