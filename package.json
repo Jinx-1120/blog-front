@@ -23,7 +23,7 @@
     "gravatar": "^1.8.0",
     "highlight.js": "^9.15.8",
     "kewler": "^1.0.8",
-    "marked": "^0.6.2",
+    "marked": "^0.7.0",
     "node-sass": "^4.12.0",
     "nuxt": "^2.0.0",
     "sass-loader": "^7.1.0",
