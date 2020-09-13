@@ -1,0 +1,10 @@
+version: '3'
+services:
+  blog-front:
+    image: blog-front:v1.1
+    container_name: blog-front
+    restart: always
+    build: .
+    ports:
+      - 3001:3001
+
