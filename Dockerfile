@@ -1,9 +1,9 @@
-FROM node:12.15.0-alpine
+FROM node:12.10.0-alpine
 
 WORKDIR /web-front
 
 COPY . .
-
+RUN npm install -g mirror-config-china --registry=http://registry.npm.taobao.org
 RUN npm i --registry https://registry.npm.taobao.org
 RUN npm run build
 
