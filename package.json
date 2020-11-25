@@ -21,7 +21,7 @@
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
     "gravatar": "^1.8.0",
-    "highlight.js": "^9.15.8",
+    "highlight.js": "^10.1.2",
     "kewler": "^1.0.8",
     "marked": "^0.6.2",
     "node-sass": "^4.12.0",
