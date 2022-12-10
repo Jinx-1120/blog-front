@@ -19,7 +19,7 @@
     "@nuxtjs/style-resources": "^0.1.2",
     "bezier-easing": "^2.1.0",
     "cross-env": "^5.2.0",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "gravatar": "^1.8.0",
     "highlight.js": "^9.15.8",
     "kewler": "^1.0.8",
